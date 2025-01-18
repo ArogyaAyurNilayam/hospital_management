@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Billing System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            font-size: 14px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+            font-size: 14px;
+            width: 100%;
+        }
+        .table-responsive {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-3">
+        <h1 class="text-center mb-3">Pharmacy Billing System</h1>
+        <form id="billForm" method="POST" action="{% url 'update_bill' data.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="opNumber">OP Number:</label>
+                <input type="text" id="opNumber" name="op_number" class="form-control" value="{{ data.op_number }}" readonly>
+            </div>
+    
+            <div class="form-group">
+                <label for="opDate">Consultation Date:</label>
+                <input type="text" id="opDate" name="date" class="form-control" value="{% if data.date %}{% if data.date|date %}{{ data.date|date:'Y-m-d' }}{% else %}{{ data.date }}{% endif %}{% endif %}" readonly>
+            </div>
+            
+    
+            <div class="form-group">
+                <label for="medicine">Medicine:</label>
+                <select id="medicine" name="medicine_name" class="form-control" onchange="updatePrice()">
+                    <option value="">Select Medicine</option>
+                    <!-- Loop through the medicines -->
+                    {% for medicine in medicines %}
+                    <option value="{{ medicine.Name }}" {% if medicine.Name == data.medicine_name %} selected {% endif %} data-price="{{ medicine.Rate }}">{{ medicine.Name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            
+    
+            <div class="form-group">
+                <label for="price">Price per unit:</label>
+                <input type="text" id="price" name="rate" value= "{{ data.rate }}" readonly class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1"  value= "{{ data.quantity }}" class="form-control">
+            </div>
+    
+            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+            <!-- <button type="reset" class="btn btn-secondary btn-sm">Clear</button> -->
+        </form>
+    
+        <!-- Display bill details -->
+        <div class="table-responsive">
+            <table class="table mt-3">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bill_detail in bill_details %}
+                    <tr>
+                        <td>{{ bill_detail.medicine_name }}</td>
+                        <td>{{ bill_detail.rate }}</td>
+                        <td>{{ bill_detail.quantity }}</td>
+                        <td>{{ bill_detail.total }}</td>
+                        <!-- <td><button type="button">Delete</button></td> -->
+                        <td><a href="/meddel/{{bill_detail.id}}">Delete</a></td>
+                        <td><a href="/edit/{{bill_detail.id}}">Update</a></td>
+                        
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Display total amount to be paid -->
+        <div class="text-center">
+            <a href="/seebill/" >proceed to bill</a>
+        </div>
+        
+    </div>
+    
+   
+
+</body>
+</html>

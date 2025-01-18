@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Arogya Ayur Nilaya</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.jpg' %}" rel="icon">
+
+  <!-- <link href="{% static 'img/favicon.jpg' %}" rel="icon"> -->
+  <link href="{% static 'img/ayu.jpg' %}" rel="apple-touch-icon">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <!-- <link href="static/css/style.css" rel="stylesheet"> -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+  <!-- =======================================================
+  * Template Name: Medicio
+  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 6PM
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Call us now +9743919410
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <!-- <a href="index.html" class="logo me-auto"><img src="static/img/logo.png" alt=""></a> -->
+      <a href="index.html" class="logo me-auto" style="color: rgb(13, 61, 3);">
+        <img src="{% static 'img/logo.jpg' %}" alt="">Arogya Ayur Nilaya
+      </a>
+    
+
+    
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About us</a></li>
+          <li><a class="nav-link scrollto" href="#featured-services">Panchakarma Procedure</a></li>
+          <li><a class="nav-link scrollto" href="#services">Treatments</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#departments">Departments</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul> -->
+              <!-- <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="{% url 'registration' %}" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span> Registration for staff</a>
+
+
+      <a href="{% url 'signin' %}" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span> Login Here</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  
+      <div class="carousel-inner" role="listbox">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url('/static/img/s1.jpg');">
+        </div>
+        
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item " style="background-image: url('/static/img/s2.jpg');">
+        </div>
+        
+        
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item " style="background-image: url('/static/img/s3.jpg');">
+        </div>
+        
+  
+      </div>
+  
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+  
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+  
+    </div>
+  </section>
+
+
+  
+  <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            
+              <h4 class="title"><a href="">Vamanam</a></h4>
+              <p class="description">In this treatment, a patient is given inside and outside oleation and fomentation treatments for few days which includes therapies and some ayurvedic medicines. Once the toxins get melted and accumulate in upper cavities of body, the patient is given emetic medicines and decoction. This enables vomiting and helps in disposing of the poisons from the body tissues. Vaman treatment is particularly suggested basically for kapha-dominated conditions, such as weight gain, asthma and hyperacidity.</p>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              
+              <h4 class="title"><a href="">Virechanam</a></h4>
+              <p class="description">In virechanam, purgation or disposal of toxins happens through the clearing of the bowels. In this treatment too, the patient is given inside and outside oleation and fomentation treatments. From that point onward, the patient is given a natural purgative to encourage clearing of the guts that aides in purifying the body of toxins. Virechan treatment is prescribed fundamentally for pitta -dominated conditions, such as herpes zoster, jaundice , colitis, celiac infection etc.</p>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              
+              <h4 class="title"><a href="">Basti</a></h4>
+              <p class="description">Managing medicated substances through enema is Ayurveda's exceptional commitment to the therapeutic world. The treatment has huge advantages, particularly in convoluted and chronic diseases. According to the nature of disease, home grown decoctions, oils, ghee or milk are managed into the rectum and this has incredible positive effects. This treatment is to a great degree powerful against vata-dominated conditions, such as arthritis, piles and constipation.</p>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              
+              <h4 class="title"><a href="">Nasyam</a></h4>
+              <p class="description">This treatment is extremely effective in clearing and purging the head area. At the beginning of the treatment, the head and shoulder areas are given a delicate massage and fomentation. After that, nasal drops are regulated in both the nostrils. This achieves the cleaning of the whole head area and diminishes different sorts of cerebral pain, headache, hair issues, sleep disorder, neurological disorders, sinusitis, chronic rhinitis and respiratory ailments.</p>
+            </div>
+          </div>
+    
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
+              
+              <h4 class="title"><a href="">Raktamoksham</a></h4>
+              <p class="description">This treatment is useful for cleaning of blood and viable against ailments caused because of impure blood. It can be done in a particular area or for the whole body. This treatment is especially valuable in different skin infections, such as psoriasis, dermatitis , and furthermore in local lesions such as abscesses and pigmentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<!-- End Featured Services Section -->
+
+    
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Welcome to "Arogya Ayur Nilaya Ayurveda Clinic," nestled in the serene surroundings of Vallom, Perumbavoor in Ernakulam District,Kerala. We are dedicated to promote holistic wellness through traditional Ayurvedic practices, with a specialization in Panchakarma treatments.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'img/aan.jpg' %}" class="img-fluid" alt="">
+
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Benefits of Panchakarma</h3>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Eliminate toxins and toxic conditions from your body and mind.</li>
+              <li><i class="bi bi-check-circle"></i> Restore your constitutional balance improving health and wellness.</li>
+              <li><i class="bi bi-check-circle"></i> Strengthen your immune system and become more resistant to   illness.</li>
+              <li><i class="bi bi-check-circle"></i> Reverse the negative effects of stress on your body and mind thereby slowing the aging process.</li>
+              <li><i class="bi bi-check-circle"></i> Bring about deep relaxation and a sense of well-being.</li>
+            </ul>
+            
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+    <!-- ======= Features Section ======= -->
+    <!-- <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+            <div class="icon-box mt-5 mt-lg-0">
+              <i class="bx bx-receipt"></i>
+              <h4>Est labore ad</h4>
+              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Harum esse qui</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-images"></i>
+              <h4>Aut occaecati</h4>
+              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-shield"></i>
+              <h4>Beatae veritatis</h4>
+              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+            </div> -->
+          <!-- </div>
+          <div class="image col-lg-6 order-1 order-lg-2" ;style='background-image: url("{% static "img/features.jpg" %}");' data-aos="zoom-in"></div>
+
+        </div>
+
+      </div>
+    </section>End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Treatments</h2>
+          <p>At Arogya Ayur Nilaya, your haven for holistic healing we provide the following treatments
+          <p>Discover the Essence of Ayurveda at Arogya Ayur Nilaya:
+
+          </p>
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Abhyangam</a></h4>
+            <p class="description"> Ayurvedic massage with warm herbal oils for relaxation, detoxification, and balance. Promotes circulation, relieves tension, and nourishes the skin.
+
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Pichu</a></h4>
+            <p class="description">Pichu is an Ayurvedic therapy where warm medicated oil-soaked cotton is applied to the affected area to alleviate pain, inflammation, and stiffness. It is commonly used to treat conditions like cervical spondylosis, lumbar spondylosis, osteoarthritis, and certain neurological disorders.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Sthanika Vasti</a></h4>
+            <p class="description">Sthanika Vasti is an Ayurvedic therapeutic enema procedure where a well of medicated oil or herbal decoction is retained over a specific area of the body, usually the lower back or joints, to alleviate pain, inflammation, and stiffness. It is commonly used in the management of localized musculoskeletal disorders such as low back pain, sciatica, osteoarthritis, and rheumatoid arthritis.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Siravyadha</a></h4>
+            <p class="description">Siravyadha is an ancient therapeutic procedure in Ayurveda involving bloodletting or venesection. It is used to treat certain diseases by removing a specific amount of blood from the body, believed to balance the doshas and purify the blood.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Udhwarthanam</a></h4>
+            <p class="description">Udhwarthanam is an Ayurvedic therapeutic procedure that involves a dry herbal powder massage. The massage is typically performed using herbal powders mixed with oils on the body in upward strokes. It is used to reduce excess fat, improve skin texture, tone muscles, and alleviate certain skin conditions like cellulite and obesity.
+
+
+
+
+
+
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Shirodhara</a></h4>
+            <p class="description">Shirodhara is a popular Ayurvedic therapy that involves a continuous stream of warm medicated oil, herbal decoction, milk, or buttermilk poured onto the forehead in a rhythmic and continuous flow. This therapy is deeply relaxing and is used to calm the mind, reduce stress, promote better sleep, and alleviate various neurological disorders like anxiety, depression, insomnia, and migraine.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="{% static 'img/gallery-1.jpg' %}">
+                <img src="{% static 'img/gallery-1.jpg' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="{% static 'img/gallery-2.jpg' %}">
+                <img src="{% static 'img/gallery-2.jpg' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="{% static 'img/gallery-3.jpg' %}">
+                <img src="{% static 'img/gallery-3.jpg' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="{% static 'img/gallery-4.jpg' %}">
+                <img src="{% static 'img/gallery-4.jpg' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="{% static 'img/gallery-5.jpg' %}">
+                <img src="{% static 'img/gallery-5.jpg' %}" class="img-fluid" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    
+  <!-- ======= Footer ======= -->
+  <!-- <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Arogya Ayur Nilaya Ayurveda Clinic and Panchakarma Centre</h3>
+              <p>
+                Kodanand Road,Vallom,Perumbavoor <br>
+                Ernakulam district,Kerala<br><br>
+                <strong>Phone:</strong> +91 9743919410<br>
+                <strong>Email:</strong> arogyaayurnilaya@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+  <h4>Useful Links</h4>
+  <ul style="list-style-type:none; padding: 0;">
+    <li style="display: inline-block; margin-right: 10px;"><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+    <li style="display: inline-block; margin-right: 10px;"><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+    <li style="display: inline-block; margin-right: 10px;"><i class="bx bx-chevron-right"></i> <a href="#">Panchakarma Procedures</a></li>
+    <li style="display: inline-block;"><i class="bx bx-chevron-right"></i> <a href="#">Treatments</a></li>
+  </ul>
+</div> -->
+
+
+          
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>

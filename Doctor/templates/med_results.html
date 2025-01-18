@@ -1,0 +1,54 @@
+<!-- search_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Result</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="text-center mt-5 mb-3">Search Result for "{{ category }}"</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Company</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for medicine in medicines %}
+            <tr>
+              <td>{{ medicine.Name }}</td>
+              <td>{{ medicine.Category }}</td>
+              <td>{{ medicine.Company }}</td>
+              <td>{{ medicine.Rate }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="3" class="text-center">No medicine found</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+          <a href="/search_medicine/" class="btn btn-primary">Back to Search</a>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+            <a href="/dhome/" class="btn btn-primary">Back to Homepage</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

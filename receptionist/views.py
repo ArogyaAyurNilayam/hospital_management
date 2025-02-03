@@ -31,21 +31,21 @@ def patient_registration_submit(request):
 def generate_op_number():
     from datetime import datetime
     current_date = datetime.now()
-    year_month = current_date.strftime("%Y%m")  # Format year and month as 'YYYYMM'
+    year_month = current_date.strftime("%m%Y")  # Format month and year as 'MMYYYY'
     
     # Get the latest patient with the same year and month
     last_patient = PatientRegistration.objects.filter(op_number__startswith=year_month).last()
     
     if last_patient:
         # Extract the registration number part from the last OP number and increment it
-        last_op_number = int(str(last_patient.op_number)[-2:])
+        last_op_number = int(str(last_patient.op_number)[:2])
         reg_number = str(last_op_number + 1).zfill(2)  # Ensure the registration number is always 2 digits
     else:
         # First patient in the month, starting from 01
         reg_number = "01"
     
     # Return the generated OP number in the format YYYYMMDD
-    op_number = year_month + reg_number
+    op_number = reg_number +year_month 
     return op_number
 
 

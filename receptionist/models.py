@@ -32,7 +32,7 @@ class Consultation_details(models.Model):
     doctor=models.CharField(max_length=100)
     symptoms=models.TextField(null=True, blank=True)
     Diagnosis=models.TextField(null=True, blank=True)
-    prescription = models.JSONField(null=True, blank=True)  # Changed from TextField to JSONField
+    prescription = models.JSONField(null=True, blank=True) 
     is_consulted=models.BooleanField(default=False)
     bill_amount=models.BigIntegerField(blank=True, null=True)
 

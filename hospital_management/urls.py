@@ -93,6 +93,10 @@ urlpatterns = [
     path('proceed_bill/',pharmacist_views.proceed_bill, name='proceed_bill'),
 
     path('lgo/', pharmacist_views.logouts),
+    path('edit_consultation/<int:op_number>/', doctor_views.edit_consultation, name='edit_consultation'),
+    path('today_consultations/', doctor_views.today_consultations, name='today_consultations'),
+
+
 
 
 

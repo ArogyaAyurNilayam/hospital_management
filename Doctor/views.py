@@ -11,6 +11,8 @@ from django.contrib import messages
 from datetime import date
 from Pharmacist import views
 from Pharmacist.models import Medicine
+from datetime import date
+
 
 
 
@@ -94,3 +96,24 @@ def search_result(request):
             medicines = Medicine.objects.filter(Category=category)
             return render(request, 'med_results.html', {'medicines': medicines, 'category': category})
     return render(request, 'medicine_search.html')
+
+@login_required
+def today_consultations(request):
+    user = request.user
+    today = date.today()
+    consultations = Consultation_details.objects.filter(date=today, doctor=user.first_name)
+    return render(request, 'today_consultations.html', {'consultations': consultations})
+
+@login_required
+def edit_consultation(request, op_number):
+    user = request.user
+    today = date.today()
+    consultation = get_object_or_404(Consultation_details, op_number=op_number, date=today, doctor=user.first_name)
+    if request.method == 'POST':
+        form = ConsultationForm(request.POST, instance=consultation)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("<script>window.alert('Successfully Updated !!!!');window.location.href='/today_consultations/'</script>")
+    else:
+        form = ConsultationForm(instance=consultation)
+    return render(request, 'edit_consultation.html', {'form': form, 'consultation': consultation})
